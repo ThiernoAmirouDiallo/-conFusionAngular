@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Dish } from '../shared/dish';
+import { DishdetailComponent } from '../dishdetail/dishdetail.component';
+
 
 const DISHES: Dish[] = [
   {
