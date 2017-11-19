@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import { Dish } from '../shared/dish';
 import 'rxjs/add/operator/switchMap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -27,6 +27,7 @@ export class DishdetailComponent implements OnInit {
     comment: Comment;
     commentP: Comment;
     previewComment: Comment;
+    errMess: string;    
 
     formErrors = {
       'author': '',
@@ -46,14 +47,16 @@ export class DishdetailComponent implements OnInit {
     constructor(private dishservice: DishService,
       private route: ActivatedRoute,
       private location: Location,
-      private fb: FormBuilder) { 
+      private fb: FormBuilder,
+      @Inject('BaseURL') private BaseURL) { 
         this.createForm();
       }
 
       
   
       ngOnInit() {
-        this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
+        this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds,
+          errmess => this.errMess = <any>errmess);
         this.route.params
           .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
           .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id);  });
