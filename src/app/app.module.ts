@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { RestangularModule, Restangular } from 'ngx-restangular';
+import { RestangularConfigFactory } from './shared/restConfig';
+
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -43,7 +46,8 @@ import {baseURL } from './shared/baseurl'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [DishService,PromotionService,LeaderService, {provide: 'BaseURL', useValue : baseURL},ProcessHttpmsgService],
   bootstrap: [AppComponent],
