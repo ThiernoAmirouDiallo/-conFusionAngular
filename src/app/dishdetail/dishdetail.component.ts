@@ -19,6 +19,7 @@ import { Location } from '@angular/common';
 export class DishdetailComponent implements OnInit {
   
     dish: Dish;
+    dishcopy = null;
     id: number;
     dishIds: number[];
     prev: number;
@@ -59,7 +60,7 @@ export class DishdetailComponent implements OnInit {
           errmess => this.errMess = <any>errmess);
         this.route.params
           .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-          .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id);  });
+          .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id);  });
       }
       setPrevNext(dishId: number) {
         let index = this.dishIds.indexOf(dishId);
@@ -88,7 +89,9 @@ export class DishdetailComponent implements OnInit {
     onSubmit() {
       this.commentP = this.commentForm.value;
       this.commentP.date=(new Date()).toISOString();
-      this.dish.comments.push(this.commentP);
+      this.dishcopy.comments.push(this.commentP);
+      this.dishcopy.save()
+        .subscribe(dish => { this.dish = dish; this.comment=null; this.previewComment=null; console.log(this.dish); });
       //console.log(this.commentP);
       this.commentForm.reset({
         author: '',
