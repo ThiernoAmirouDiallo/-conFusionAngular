@@ -242,5 +242,76 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "firstname": "ddd",
+      "lastname": "ddddd",
+      "telnum": "22333",
+      "email": "FFFFF@ddf",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "dffd",
+      "id": 1
+    },
+    {
+      "firstname": "diallo",
+      "lastname": "thier",
+      "telnum": "7777",
+      "email": "dfdf@fdfdf",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "great restaurent",
+      "id": 2
+    },
+    {
+      "firstname": "dddf",
+      "lastname": "dff",
+      "telnum": "12222",
+      "email": "FFFFF@ddf",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "ddfd\n",
+      "id": 3
+    },
+    {
+      "firstname": "diallo",
+      "lastname": "thierno",
+      "telnum": "6789",
+      "email": "diallo@theier.gn",
+      "agree": false,
+      "contacttype": "None",
+      "message": "great",
+      "id": 4
+    },
+    {
+      "firstname": "dddf",
+      "lastname": "fdfd",
+      "telnum": "3434",
+      "email": "dddd@ddf",
+      "agree": true,
+      "contacttype": "None",
+      "message": "dddd",
+      "id": 5
+    },
+    {
+      "firstname": "diallo",
+      "lastname": "thier",
+      "telnum": "223",
+      "email": "FFFFF@ddf",
+      "agree": false,
+      "contacttype": "None",
+      "message": "dddd",
+      "id": 6
+    },
+    {
+      "firstname": "dddd",
+      "lastname": "thierno",
+      "telnum": "6789",
+      "email": "diallo@theier.gn",
+      "agree": false,
+      "contacttype": "None",
+      "message": "dddd",
+      "id": 7
+    }
+  ]
 }
